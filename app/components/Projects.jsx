@@ -338,7 +338,7 @@ const Portfolio = () => {
                 <div className="lg:w-96">
                   <div className="rounded-xl p-6 text-center relative overflow-hidden" style={{ backgroundColor: `${activeService.color}08`, border: `1px solid ${activeService.color}20`, boxShadow: `0 8px 25px ${activeService.color}15` }}>
                     <div className="relative z-10">
-                      <h4 className="font-bold text-lg mb-4" style={{ color: activeService.color }}>Industries We Serve</h4>
+                      <h4 className="font-bold text-lg mb-4">Industries We Serve</h4>
                       <div className="flex flex-wrap gap-2 justify-center mb-6">
                         {activeService.industries.map((industry, idx) => (
                           <span key={idx} className="px-3 py-1.5 rounded-full text-xs md:text-sm font-medium" style={{ backgroundColor: `${activeService.color}15`, color: activeService.color, border: `1px solid ${activeService.color}25` }}>

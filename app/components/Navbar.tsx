@@ -79,7 +79,7 @@ const Navbar = () => {
 
   const navLinks = [
     { href: '/about', label: 'About' },
-    { href: '/#works', label: 'Our Works' },
+    { href: '/projects', label: 'Our Works' },
     { href: '/pricing', label: 'Pricing' },
     { href: '/contact', label: 'Contact' },
     { href: '/blogs', label: 'Blogs' },
@@ -142,7 +142,7 @@ const Navbar = () => {
         <div className="flex-between w-full max-w-7xl mx-auto px-6 py-4">
           <Link href="/" className="group shrink-0">
             <h1 className="text-2xl font-bold bg-gradient-to-r from-[#FF5C33] to-[#FF2D46] bg-clip-text text-transparent hover:from-[#FF2D46] hover:to-[#FF5C33] transition-all duration-300" style={{ fontFamily: 'Figtree, serif' }}>
-              SirePrince
+              siretech
             </h1>
           </Link>
 
@@ -185,7 +185,8 @@ const Navbar = () => {
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
-                <button 
+                <Link href="/services">
+                 <button 
                   onClick={() => setIsOpen(!isOpen)}
                   className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-200 cursor-pointer ${
                     isOpen 
@@ -198,7 +199,8 @@ const Navbar = () => {
                   <span>Services</span>
                   <FaChevronDown className={`w-3 h-3 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
                 </button>
-
+</Link>
+              
                 {isOpen && (
                   <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[650px] z-[9999]">
                     <div className="bg-[#E9EAEF] rounded-2xl shadow-2xl border border-[#FF5C33]/20 overflow-hidden">
@@ -291,7 +293,7 @@ const Navbar = () => {
             </ul>
           </nav>
 
-          <Link href="/request-quote" className="shrink-0">
+          <Link href="/contact" className="shrink-0">
             <button className="px-6 py-2.5 bg-gradient-to-r from-[#FF5C33] to-[#FF2D46] text-white rounded-sm font-medium hover:from-[#FF2D46] hover:to-[#FF5C33] transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 cursor-pointer" style={{ fontFamily: 'Figtree, sans-serif' }}>
               Get a Quote
             </button>
@@ -306,7 +308,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between px-6 py-4">
           <Link href="/">
             <h1 className="text-xl font-bold bg-gradient-to-r from-[#FF5C33] to-[#FF2D46] bg-clip-text text-transparent" style={{ fontFamily: 'Figtree, sans-serif' }}>
-              SirePrince
+              siretech
             </h1>
           </Link>
 
@@ -442,7 +444,7 @@ const Navbar = () => {
                 </div>
 
                 <div className="p-6 border-t border-[#FF5C33]/20 bg-white/30">
-                  <Link href="/request-quote" onClick={() => setMobileOpen(false)}>
+                  <Link href="/contact" onClick={() => setMobileOpen(false)}>
                     <button className="w-full px-6 py-3 bg-gradient-to-r from-[#FF5C33] to-[#FF2D46] text-white rounded-xl font-medium hover:from-[#FF2D46] hover:to-[#FF5C33] transition-all duration-200 cursor-pointer" style={{ fontFamily: 'Figtree, serif' }}>
                       <FaEnvelope className="inline mr-2" />
                      Talk to Us

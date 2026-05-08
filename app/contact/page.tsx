@@ -1,25 +1,44 @@
 'use client'
 
-import React from 'react'
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { 
   FadeUp, 
   FadeDown, 
   FadeLeft, 
-  FadeRight, 
-
+  FadeRight 
 } from '../components/Reveal';
+import { 
+  FaEnvelope, 
+  FaPhone, 
+  FaMapMarkerAlt, 
+  FaClock,
+  FaWhatsapp,
+  FaCheckCircle,
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaTiktok,
+  FaArrowRight,
+  FaRegClock
+} from 'react-icons/fa';
 
+// Your exact color palette from hero section
+const colors = {
+  bg: '#FFFFFF',
+  primary: '#17012C',
+  primaryLight: '#5B3AEE',
+  accent: '#F39F5F',
+  accentHover: '#E8893E',
+  blue: '#219BE4',
+  textDark: '#333333',
+  textMuted: '#666666'
+}
 
-const contact = () => {
-
-
-
+const Contact = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-
-  async function handleSubmit(event:React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event) {
     event.preventDefault();
     setIsLoading(true);
 
@@ -36,7 +55,7 @@ const contact = () => {
 
       if (response.ok) {
         setIsSubmitted(true);
-        (event.currentTarget).reset();
+        event.currentTarget.reset();
         
         setTimeout(() => {
           setIsSubmitted(false);
@@ -51,107 +70,319 @@ const contact = () => {
     }
   }
 
+  const contactInfo = [
+    {
+      icon: <FaWhatsapp className="text-lg" />,
+      title: "WhatsApp",
+      value: "+233 245 546 733",
+      link: "https://wa.me/233245546733",
+      color: "#25D366",
+      description: "Quick response within minutes"
+    },
+    {
+      icon: <FaEnvelope className="text-lg" />,
+      title: "Email",
+      value: "prince.akpadie@gmail.com",
+      link: "mailto:prince.akpadie@gmail.com",
+      color: colors.accent,
+      description: "We reply within 24 hours"
+    },
+    {
+      icon: <FaPhone className="text-lg" />,
+      title: "Phone",
+      value: "+233 245 546 733",
+      link: "tel:+233 245 546 733",
+      color: colors.primaryLight,
+      description: "Mon-Fri, 9am-6pm"
+    },
+    {
+      icon: <FaMapMarkerAlt className="text-lg" />,
+      title: "Location",
+      value: "Accra Digital Centre",
+      link: "https://maps.google.com",
+      color: colors.blue,
+      description: "Accra, Ghana"
+    }
+  ];
 
-return (
-    <div className='flex-row items-center justify-between w-full  bg-black/50 pb-20 sm:py-20 lg:px-12 '>
-      <FadeDown>  <h1 className="text-center text-4xl md:text-5xl lg:text-6xl font-bold leading-tight ">
-    Reach Out
-          </h1>
-       </FadeDown>
-   <div className='w-full py-12 px-6 sm:py-18 sm:px-24 flex flex-col-reverse md:flex-row items-start justify-between gap-6'>
+  const socialLinks = [
+    { icon: <FaFacebook className="w-4 h-4" />, link: "https://www.facebook.com/share/17UH3buTEp/", color: "#1877F2", name: "Facebook" },
+    { icon: <FaInstagram className="w-4 h-4" />, link: "https://www.instagram.com/sire_prince_7/", color: "#E4405F", name: "Instagram" },
+    { icon: <FaTiktok className="w-4 h-4" />, link: "https://www.tiktok.com/@sire_prince", color: "#010101", name: "TikTok" },
+    { icon: <FaLinkedin className="w-4 h-4" />, link: "https://www.linkedin.com/in/sire-prince-037a7a31b/", color: "#0A66C2", name: "LinkedIn" }
+  ];
 
-
-<div className='flex flex-col items-center md:items-start justify-between h-full w-full  md:w-[45%] px-8 gap-18 sm:gap-25 '>
-  <FadeLeft>
-  <h2 className='text-3xl sm:text-5xl text-center md:text-start leading-relaxed sm:leading-loose lg:leading-16 font-bold w-full'>
-    Get in touch today and we'll get back to you within 24 hours.
-  </h2>       
-  </FadeLeft>
-      <FadeUp>
-  <div className='flex flex-col items-center sm:items-start text-center sm:text-center gap-8'>
- 
-    <h2 className='text-2xl font-bold'>Follow Our Socials</h2>
-    <div className="flex items-center gap-6">
-       <a target="_blank" href="https://www.facebook.com/share/17UH3buTEp/" className="hover:opacity-80 transition-opacity">
-        <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-        </svg>
-      </a>
-       <a target="_blank"  href="https://www.tiktok.com/@sire_prince" className="hover:opacity-80 transition-opacity">
-        <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 10.692 6.33 6.33 0 0 0 10.857-4.424V8.687a8.182 8.182 0 0 0 4.773 1.526V6.79a4.831 4.831 0 0 1-1.003-.104z"/>
-        </svg>
-      </a>
-  <a target="_blank" href="https://www.instagram.com/sire_prince_7/" className="hover:opacity-80 transition-opacity">
-  <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-  </svg>
-</a>
-       <a target="_blank" href="https://www.linkedin.com/in/sire-prince-037a7a31b/" className="hover:opacity-80 transition-opacity">
-        <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-        </svg>
-      </a> 
-    </div>
-     
-
-  </div>
-     </FadeUp>
-</div>
-    <div className="w-full sm:max-w-lg mx-auto bg-[#272727] p-6 rounded-lg">
-              <FadeRight> <h3 className="text-2xl font-bold mb-6 text-white">Send me a message</h3>
+  return (
+    <section id="contact" className="relative w-full overflow-hidden" style={{ 
+      background: 'transparent',
+    }}>
       
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <input
-          type="text"
-          name="name"
-          placeholder="Name or Business name"
-          required
-          className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-400 text-white"
-        />
+      {/* Generic Header - Centered above columns */}
+      <div className="relative z-10 w-full text-center px-4 sm:px-6 md:px-8 pt-12 md:pt-16 pb-6 md:pb-8">
+        <FadeDown>
+          {/* Section Header */}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#17012C] mb-3">
+              Get In Touch
+              <span className="text-[#F39F5F]">  With Us</span>
+            </h2>
+            <p className="text-[#666666] max-w-2xl mx-auto">
+              Whether you have a project in mind or just want to say hello, we'd love to hear from you.
+            </p>
+          </div>
+        </FadeDown>
+      </div>
+
+      {/* Full width layout - two columns */}
+      <div className="relative w-full flex flex-col lg:flex-row min-h-[500px]">
         
-        <div className="flex flex-col sm:flex-row gap-4">
-          <input
-            type="email"
-            name="email"
-            placeholder="Email or Number"
-            required
-            className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-400 text-white"
-          />
-          <input
-            type="text"
-            name="text"
-            placeholder="Project type e.g website"
-            required
-            className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-400 text-white"
-          />
+        {/* LEFT SIDE - With Background Image only */}
+        <div className="relative w-full lg:w-1/2 overflow-hidden">
+          {/* Background Image with light overlay */}
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                 style={{ 
+                   backgroundImage: "url('/contact-bg.jpeg')",
+                 }}>
+            </div>
+            {/* Very light overlay for text readability */}
+            <div className="absolute inset-0" style={{ 
+              background: 'linear-gradient(135deg, rgba(23,1,44,0.8) 0%, rgba(91,58,238,0.8) 100%)'
+            }}></div>
+          </div>
+
+          {/* Animated blobs on left side */}
+          <div className="absolute inset-0 opacity-20">
+            <div className="absolute top-20 left-10 w-72 h-72 rounded-full mix-blend-screen filter blur-3xl animate-pulse" 
+                 style={{ background: colors.accent }}></div>
+            <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full mix-blend-screen filter blur-3xl animate-pulse delay-1000" 
+                 style={{ background: colors.blue }}></div>
+          </div>
+
+          {/* Left Side Content - Contact Cards */}
+          <div className="relative z-10 flex flex-col justify-center h-full px-6 sm:px-8 md:px-12 py-12 md:py-16">
+            <FadeDown>
+              <h2 className="text-xl md:text-2xl font-bold text-[#17012C] mb-10">
+                <span className="text-[#ffffff]"> our team members will get back to you within 24 business hours to schedule a project discovery call. </span>
+              </h2>
+            </FadeDown>
+            <FadeLeft>
+              {/* Contact Cards */}
+              <div className="space-y-3">
+                {contactInfo.map((info, index) => (
+                  <a
+                    key={index}
+                    href={info.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-4 p-3 rounded-sm transition-all duration-300 hover:translate-x-1"
+                    style={{ 
+                      background: 'rgba(255,255,255,0.1)',
+                      backdropFilter: 'blur(10px)',
+                    }}
+                  >
+                    <div 
+                      className="w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 group-hover:scale-110"
+                      style={{ backgroundColor: `${info.color}20` }}
+                    >
+                      <div style={{ color: info.color }} className="text-lg">{info.icon}</div>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xs text-gray-300">{info.title}</h3>
+                      <p className="text-white font-medium text-sm">{info.value}</p>
+                      <p className="text-xs text-gray-400 mt-0.5">{info.description}</p>
+                    </div>
+                  </a>
+                ))}
+              </div>
+
+              {/* Social Links */}
+              <div className="flex items-center gap-4 pt-6 mt-4 border-t border-white/10">
+                <span className="text-xs text-gray-400">Follow us:</span>
+                <div className="flex items-center gap-2">
+                  {socialLinks.map((social, index) => (
+                    <a
+                      key={index}
+                      target="_blank"
+                      href={social.link}
+                      className="w-8 h-8 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-all duration-300 hover:bg-white/20"
+                      style={{ color: social.color }}
+                      aria-label={social.name}
+                    >
+                      {social.icon}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </FadeLeft>
+          </div>
         </div>
-        
-        <textarea
-          name="message"
-          placeholder="Message"
-          required
-          rows={5}
-          className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-400 resize-vertical text-white"
-        />
-        
-        <button
-          type="submit"
-          className="w-[35%] bg-black/20 text-white py-3 rounded-lg font-medium hover:bg-black/60 transition-colors cursor-pointer"
-        >
-        {isLoading ? 'Sending...' : 'Send'}
-        </button>
-      </form></FadeRight>
 
-     
+        {/* RIGHT SIDE - Contact Form - FULL WIDTH */}
+        <div className="w-full lg:w-1/2 flex items-center justify-center px-6 sm:px-8 md:px-12 py-12 md:py-16">
+          <FadeRight>
+            <div className="w-full">
+              <div className="mb-6">
+                <h3 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: colors.primary }}>
+                  Send us a message
+                </h3>
+                <p className="text-sm" style={{ color: colors.textMuted }}>Fill out the form and we will get back to you shortly.</p>
+              </div>
+              
+              {isSubmitted ? (
+                <div className="rounded-xl p-6 text-center" style={{ 
+                  background: `${colors.accent}10`, 
+                  border: `1px solid ${colors.accent}30` 
+                }}>
+                  <FaCheckCircle className="text-4xl mx-auto mb-3" style={{ color: colors.accent }} />
+                  <h4 className="text-lg font-bold mb-1" style={{ color: colors.accent }}>Message Sent!</h4>
+                  <p className="text-xs" style={{ color: colors.textMuted }}>Thank you for reaching out. We will get back to you within 24 hours.</p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div>
+                    <label className="block text-xs font-semibold mb-1.5" style={{ color: colors.textDark }}>
+                      Name or Business Name *
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      required
+                      className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-[#F39F5F] focus:ring-2 focus:ring-[#F39F5F]/20 transition-all text-sm"
+                      style={{ 
+                        background: 'white',
+                        borderColor: '#e0e0e0',
+                        color: colors.textDark
+                      }}
+                      placeholder="John Doe"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-xs font-semibold mb-1.5" style={{ color: colors.textDark }}>
+                      Email *
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      required
+                      className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-[#F39F5F] focus:ring-2 focus:ring-[#F39F5F]/20 transition-all text-sm"
+                      style={{ 
+                        background: 'white',
+                        borderColor: '#e0e0e0',
+                        color: colors.textDark
+                      }}
+                      placeholder="hello@example.com"
+                    />
+                  </div>
+                  
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-semibold mb-1.5" style={{ color: colors.textDark }}>
+                        Phone (Optional)
+                      </label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-[#F39F5F] focus:ring-2 focus:ring-[#F39F5F]/20 transition-all text-sm"
+                        style={{ 
+                          background: 'white',
+                          borderColor: '#e0e0e0',
+                          color: colors.textDark
+                        }}
+                        placeholder="+233 XX XXX XXXX"
+                      />
+                    </div>
+                    
+                    <div>
+                      <label className="block text-xs font-semibold mb-1.5" style={{ color: colors.textDark }}>
+                        Project Type *
+                      </label>
+                      <select
+                        name="project"
+                        required
+                        className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-[#F39F5F] focus:ring-2 focus:ring-[#F39F5F]/20 transition-all text-sm"
+                        style={{ 
+                          background: 'white',
+                          borderColor: '#e0e0e0',
+                          color: colors.textDark
+                        }}
+                      >
+                        <option value="">Select project type</option>
+                        <option value="website">Website Development</option>
+                        <option value="mobile">Mobile App Development</option>
+                        <option value="seo">SEO & Digital Marketing</option>
+                        <option value="maintenance">Website Maintenance</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <label className="block text-xs font-semibold mb-1.5" style={{ color: colors.textDark }}>
+                      Budget Range (Optional)
+                    </label>
+                    <select
+                      name="budget"
+                      className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-[#f35f5f] focus:ring-2 focus:ring-[#F39F5F]/20 transition-all text-sm"
+                      style={{ 
+                        background: 'white',
+                        borderColor: '#e0e0e0',
+                        color: colors.textDark
+                      }}
+                    >
+                      <option value="">Select budget range</option>
+                      <option value="under-2k">Under GHS 2,000</option>
+                      <option value="2k-5k">GHS 2,000 - GHS 5,000</option>
+                      <option value="5k-15k">GHS 5,000 - GHS 15,000</option>
+                      <option value="15k-30k">GHS 15,000 - GHS 30,000</option>
+                      <option value="30k+">GHS 30,000+</option>
+                    </select>
+                  </div>
+                  
+                  <div>
+                    <label className="block text-xs font-semibold mb-1.5" style={{ color: colors.textDark }}>
+                      Message *
+                    </label>
+                    <textarea
+                      name="message"
+                      required
+                      rows={5}
+                      className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-[#F39F5F] focus:ring-2 focus:ring-[#F39F5F]/20 transition-all resize-vertical text-sm"
+                      style={{ 
+                        background: 'white',
+                        borderColor: '#e0e0e0',
+                        color: colors.textDark
+                      }}
+                      placeholder="Tell us about your project..."
+                    />
+                  </div>
+                  
+                  <button
+                    type="submit"
+                    disabled={isLoading}
+                    className="relative w-full px-6 py-2.5  text-white  bg-gradient-to-r from-[#FF5C33] to-[#FF2D46] font-medium hover:from-[#FF2D46] hover:to-[#FF5C33]  rounded-sm transition-all duration-300 hover:scale-105 hover:shadow-2xl overflow-hidden cursor-pointer text-sm group"
+                    style={{ 
+                      color: colors.bg,
+                      boxShadow: `0 4px 15px ${colors.accent}40`
+                    }}
+                  >
+                    <span className="relative z-10 flex items-center justify-center gap-2">
+                      {isLoading ? 'Sending...' : 'Send Message'}
+                      <FaArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </button>
 
-    </div>
-   
+                  <p className="text-center text-[10px] mt-4" style={{ color: colors.textMuted }}>
+                    By submitting, you have taken the first step towards bringing your vision to life.                  </p>
+                </form>
+              )}
+            </div>
+          </FadeRight>
+        </div>
+      </div>
+    </section>
+  );
+};
 
-
-    </div>
-    </div>
-  )
-}
-
-export default contact
+export default Contact;

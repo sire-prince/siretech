@@ -44,6 +44,9 @@ const About = () => {
           </div>
         </FadeUp>
 
+
+
+        {/* Two Column Layout */}
         {/* Two Column Layout */}
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
           

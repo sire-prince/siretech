@@ -7,7 +7,7 @@ import { eudoxusSans } from "./font";
 
 
 const siteConfig = {
-  url: 'https://sireprince.vercel.app',
+  url: 'https://siretech.vercel.app',
   author: 'Sire Prince',
 
 }
@@ -26,13 +26,13 @@ export const metadata: Metadata = {
     'Software Engineer portfolio', 
     'SaaS Development'
   ],
-  metadataBase: new URL('https://sireprince.vercel.app'),
+  metadataBase: new URL('https://siretech.vercel.app'),
   authors: [{ name: 'Sire Prince' }], 
   creator: 'Sire Prince',
   openGraph: {
     type: 'website',
     locale: 'en_GH',
-    url: 'https://sireprince.vercel.app',
+    url: 'https://siretech.vercel.app',
     title: 'Sire Prince | Software Developer | Business-Focused Engineer',
     description: 'Bridging the gap between technical execution and business strategy.',
     siteName: 'Sire Prince Portfolio',

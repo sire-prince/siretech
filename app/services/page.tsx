@@ -1,177 +1,201 @@
+'use client'
 import React from 'react'
+import { FadeUp,FadeDown } from '../components/Reveal'
 import Link from 'next/link'
-import Myprocess from '../components/Myprocess'
-import { FaGlobe, FaMobile, FaTools, FaPaintBrush, FaArrowCircleUp, FaHandsHelping } from 'react-icons/fa';
-import { 
-  FadeUp, 
-  FadeDown, 
-
-} from '../components/Reveal';
 
 const Services = () => {
-  const services = [
-    {
-      title: "Website Development",
-      description: "Custom websites and web applications built with modern frameworks to establish your strong online presence.",
-      features: ["Hoisting / Domain Registration", "Responsive Design", "Performance Optimization", "SEO-friendly Structure", "Cross-browser Compatibility"],
-      icon: <div className='p-2 bg-amber-800 rounded-md'>
-        <FaGlobe className="w-7 h-7" title="Website" />
-      </div>
-    },
-    {
-      title: "Mobile App Development",
-      description: "Native and cross-platform mobile applications that deliver seamless user experiences on all devices.",
-      features: ["iOS & Android Development", "React Native/Flutter", "App Store Deployment", "Offline Functionality", "Push Notifications"],
-      icon: <div className='p-2 bg-red-500 rounded-md'>
-        <FaMobile className="w-7 h-7" title="Phone" />
-      </div>
-    },
-    {
-      title: "SEO",
-      description: "Search Engine Optimization strategies to improve your website's visibility and drive organic traffic.",
-      features: ["Keyword Research & Analysis", "On-page Optimization", "Technical SEO Audit", "Content Strategy", "Ranking Monitoring"],
-      icon: <div className='p-2 bg-purple-800 rounded-md'>
-        <FaArrowCircleUp className="w-7 h-7 transform rotate-45" />
-      </div>
-    },
-    {
-      title: "Website Maintenance",
-      description: "Ongoing support and maintenance to keep your website secure, updated, and performing optimally.",
-      features: ["Regular Security Updates", "Performance Monitoring", "Content Updates", "Backup Management", "Technical Support"],
-      icon: <div className='p-2 bg-green-800 rounded-md'>
-        <FaTools className="w-7 h-7" title="Tools" />
-      </div>
-    },
-    {
-      title: "Graphic Design",
-      description: "Creative visual design solutions that enhance your brand identity and user engagement.",
-      features: ["Logo & Brand Identity", "UI/UX Design", "Marketing Materials", "Social Media Graphics", "Visual Content Creation"],
-      icon: <div className='p-2 bg-yellow-400 rounded-md'>
-        <FaPaintBrush className="w-7 h-7" title="brush" />
-      </div>
-    },
-    {
-      title: "IT Consultancy",
-      description: "Strategic technology guidance to help you make informed decisions and optimize your digital infrastructure.",
-      features: ["Technology Strategy", "System Architecture", "Digital Transformation", "Security Assessment", "IT Infrastructure Planning"],
-      icon: <div className='p-2 bg-blue-800 rounded-md'>
-        <FaHandsHelping className="w-7 h-7" title="help" />
-      </div>
-    }
-  ]
-
-  const process = [
-    {
-      step: "01",
-      title: "Discovery & Planning",
-      description: "We analyze your requirements and create a detailed project roadmap."
-    },
-    {
-      step: "02",
-      title: "Design & Prototyping",
-      description: "We design wireframes and prototypes for your approval."
-    },
-    {
-      step: "03",
-      title: "Development",
-      description: "Our team brings your project to life with clean, efficient code."
-    },
-    {
-      step: "04",
-      title: "Testing & Launch",
-      description: "Rigorous testing followed by deployment and launch."
-    }
-  ]
+ const services = [
+  {
+    id: 1,
+    title: "Web Development",
+    description: "Get a stunning website that attracts customers and grows your business online.",
+    convertingMessage: "Get more customers online | Sell products 24/7 | Look professional",
+    features: ["Beautiful Website", "Sell Online", "Mobile Friendly"],
+    color: "#F39F5F",
+    link: "/services/web-development",
+    bgImage: "/service1.jpg"
+  },
+  {
+    id: 2,
+    title: "Mobile Apps",
+    description: "Reach your customers wherever they are with a custom mobile app for your business.",
+    convertingMessage: "Connect with customers anytime | Send instant offers | Build loyalty",
+    features: ["Customer Engagement", "Instant Updates", "Easy to Use"],
+    color: "#219BE4",
+    link: "/services/mobile-apps",
+    bgImage: "/service2.jpeg"
+  },
+  {
+    id: 3,
+    title: "SEO",
+    description: "Get found on Google when customers are searching for what you offer.",
+    convertingMessage: "Appear on page 1 of Google | Get more calls | Beat competitors",
+    features: ["More Website Traffic", "Local Customers", "Grow Sales"],
+    color: "#5B3AEE",
+    link: "/services/seo",
+    bgImage: "/service3.jpg"
+  },
+  {
+    id: 4,
+    title: "Website Maintenance",
+    description: "Keep your website safe, fast, and running smoothly without any technical hassle.",
+    convertingMessage: "Never worry about hackers | Always up and running | Peace of mind",
+    features: ["24/7 Protection", "Fast Loading", "Automatic Backups"],
+    color: "#F39F5F",
+    link: "/services/maintenance",
+    bgImage: "/service4.png"
+  },
+  {
+    id: 5,
+    title: "Graphic Design",
+    description: "Make your business look professional and trustworthy with stunning designs.",
+    convertingMessage: "Look professional | Get noticed | Build customer trust",
+    features: ["Logo Design", "Business Cards", "Social Media Graphics"],
+    color: "#219BE4",
+    link: "/services/graphic-design",
+    bgImage: "/service5.png"
+  },
+  {
+    id: 6,
+    title: "Brand Design",
+    description: "Create a strong brand identity that customers remember and love.",
+    convertingMessage: "Stand out from competition | Attract ideal customers | Grow fast",
+    features: ["Brand Recognition", "Customer Loyalty", "Professional Image"],
+    color: "#5B3AEE",
+    link: "/services/brand-design",
+    bgImage: "/service6.jpeg"
+  }
+]
 
   return (
-    <div className="min-h-screen bg-black/90 text-white pt-36 sm:pt-14">
-      {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-8 lg:px-24">
-        <div className="max-w-7xl mx-auto">
-         <FadeDown>   <div className="text-center mb-16">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              Our Solutions
-            </h1>
-            <p className="text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto">
-              Comprehensive digital solutions to elevate your online presence and drive business growth.
-            </p>
-          </div></FadeDown>
-
-          {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-            {services.map((service, index) => (
-              <div 
-                key={index}
-                className="bg-black/50 border border-gray-800 rounded-xl p-6 sm:p-8 hover:border-blue-400/50 transition-all duration-300 hover:transform hover:-translate-y-2"
-              >
-                <FadeUp>  <div className="flex items-center justify-start mb-7 gap-5">
-                  {service.icon}
-                  <h3 className="text-xl sm:text-2xl font-bold">{service.title}</h3>
-                </div>
-                
-                <p className="text-gray-300 mb-6 leading-relaxed">{service.description}</p>
-                <ul className="space-y-2">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-sm sm:text-base text-gray-400">
-                      <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                </FadeUp>
-              </div>
-            ))}
+      <section id="contact" className="relative w-full overflow-hidden" style={{ 
+      background: 'transparent',
+    }}>         {/* Section Header */}
+           <div className="relative w-full h-[300px] md:h-[350px] overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+               style={{ 
+                 backgroundImage: "url('/about-banner.jpg')",
+               }}>
           </div>
-    <div className="bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-2xl p-8 sm:p-12 text-center">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6">
-              Book A Demo Of A project You Have In Mind 
-            </h2>
-            <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-              Let's discuss your ideas and create prototypes at affordable price
-            </p>
-            <div className="flex items-center gap-4 justify-center">
-              <Link href="/contact">
-                <button className="cursor-pointer bg-blue-400 text-black px-8 py-4 rounded-lg font-bold hover:bg-blue-300 transition-colors duration-300">
-                  Book a Project
-                </button>
-              </Link>
-             
+          
+          {/* Dark Overlay */}
+          <div className="absolute inset-0" style={{ 
+            background: 'linear-gradient(135deg, rgba(23,1,44,0.8) 0%, rgba(91,58,238,0.8) 100%)'
+          }}></div>
+          
+          {/* Content */}
+          
+           <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 mb-3">
+              <FadeDown>
+                <h1 className="text-4xl md:text-5xl font-bold text-white mb-3 mx-5">
+              Premier Choice Software Development and <br />Web Design Company in Ghana </h1>
+              </FadeDown>
             </div>
-          </div>
-          <Myprocess />
-          
-          {/* CTA Section */}
-           <FadeDown>
-          <div className="bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-2xl p-8 sm:p-12 text-center">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6">
-              Ready to Start Your Project?
-            </h2>
-            <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-              Let's discuss your ideas and create something amazing together. Get in touch for a free consultation.
-            </p>
-            <FadeUp>  <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
-                <button className="cursor-pointer bg-blue-400 text-gray-800 px-8 py-4 rounded-lg font-bold hover:bg-blue-300 transition-colors duration-300">
-                  Start a Project
-                </button>
-              </Link>
-              
-            </div></FadeUp>
-          
-          </div>
-          </FadeDown>
         </div>
-      </section>
-    </div>
+      <div className="max-w-7xl mx-auto mt-12" >
+        
+     
+        <FadeUp>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#17012C] mb-3">
+              Transform Your <span className="text-[#F39F5F]">Business Today</span>
+            </h2>
+            <p className="text-[#666666] max-w-2xl mx-auto">
+              Join 150+ businesses that have scaled with our solutions. Choose your path to growth.
+            </p>
+          </div>
+        </FadeUp>
+
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <FadeUp key={service.id} delay={0.1 * index}>
+              <div 
+                className="group relative bg-cover bg-center rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                style={{ backgroundImage: `url('${service.bgImage}')` }}
+              >
+                {/* Dark Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#02c2ed/70]  via-[#00A9CE]/60 to-[#17012C]/60 transition-all duration-300 group-hover:bg-[#17012C]/80" />
+                
+                <div className="relative z-10 p-8 min-h-[420px] flex flex-col">
+                  
+                  {/* Converting Message Badge */}
+                  <div className="mb-4 flex items-end gap-2">
+                    <span 
+                      className="inline-block px-3 py-1.5 rounded-full text-xs font-bold animate-pulse"
+                      style={{ 
+                        background: `linear-gradient(135deg, ${service.color}, ${service.color}cc)`,
+                        color: 'white'
+                      }}
+                    >
+                      
+                    </span>
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-2xl font-bold text-white mb-3">
+                    {service.title}
+                  </h3>
+
+                  {/* Converting Message - New */}
+                  <p className="text-white text-sm font-semibold mb-3">
+                    {service.convertingMessage}
+                  </p>
+
+                  {/* Description */}
+                  <p className="text-gray-200 text-sm leading-relaxed mb-4">
+                    {service.description}
+                  </p>
+
+                  {/* Features Tags */}
+                  <div className="flex flex-wrap gap-2 mb-5">
+                    {service.features.map((feature, i) => (
+                      <span 
+                        key={i}
+                        className="px-2 py-1 bg-white/10 backdrop-blur-sm text-white/90 text-xs rounded-md"
+                      >
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Learn More CTA */}
+                <Link href={service.link} className="mt-auto">
+                    <button    className="px-5 py-2.5 flex items-center font-semibold rounded-sm transition-all duration-300 hover:scale-105 backdrop-blur-sm"
+                    style={{ 
+                      background: 'transparent',
+                      border: `2px solid white`,
+                      color: 'white'
+                    }}>
+                      Learn More
+                      <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </FadeUp>
+          ))}
+        </div>
+
+        {/* Bottom CTA - More Converting */}
+        <FadeUp delay={0.3}>
+          <div className="text-center my-16 p-8 bg-gradient-to-r from-[#F39F5F]/10 to-[#219BE4]/10 rounded-2xl">
+            <p className="text-[#17012C] font-bold mb-2">Don't see what you're looking for?</p>
+            <p className="text-[#666666] mb-4">We build custom solutions tailored to your unique business needs</p>
+            <Link href="/contact">
+              <button className="px-6 py-2.5 bg-gradient-to-r from-[#FF5C33] to-[#FF2D46] text-white rounded-sm font-medium hover:from-[#FF2D46] hover:to-[#FF5C33] transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 cursor-pointer" style={{ fontFamily: 'Figtree, sans-serif' }}>
+                      Get Free Consultation →
+              </button>
+            </Link>
+          </div>
+        </FadeUp>
+
+      </div>
+    </section>
   )
 }
 
 export default Services
-
-
-
-
-
-
-
-

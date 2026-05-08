@@ -21,7 +21,6 @@ const Corevalues = () => {
     {
       id: 1,
       title: "Team Work",
-      tagline: "Together we achieve more.",
       description: "We are deeply committed to understanding and solving our customers' real problems. Prioritising team work for bigger challenges and celebrating collective wins.",
       question: "How does this create value for our customer?",
       icon: <FaUsers className="text-2xl" />,
@@ -34,7 +33,6 @@ const Corevalues = () => {
     {
       id: 2,
       title: "Integrity and Trust",
-      tagline: "Doing the right thing, especially when it's hard.",
       description: "Being open, honest, and clear in communication with employees, customers, and stakeholders. Building relationships that last beyond projects.",
       question: "Are we proud of how we achieved this result?",
       icon: <FaShieldAlt className="text-2xl" />,
@@ -47,7 +45,6 @@ const Corevalues = () => {
     {
       id: 3,
       title: "Innovation",
-      tagline: "Embrace the unknown and create what's next.",
       description: "We champion curiosity and challenge the status quo with elegant solutions. Every problem is an opportunity to innovate and improve.",
       question: "What's the boldest solution we can pursue?",
       icon: <FaLightbulb className="text-2xl" />,
@@ -60,7 +57,6 @@ const Corevalues = () => {
     {
       id: 4,
       title: "Excellence",
-      tagline: "Achieving significant, challenging goals",
       description: "A commitment to providing the best in every aspect of the business. We don't just meet expectations—we exceed them.",
       question: "How can I help my colleague succeed today?",
       icon: <FaStar className="text-2xl" />,
@@ -84,24 +80,19 @@ const Corevalues = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <FadeDown>
-          <div className="text-center mb-16">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F39F5F]/10 border border-[#F39F5F]/20 mb-4">
-              <span className="w-2 h-2 rounded-full bg-[#F39F5F] animate-pulse"></span>
-              <span className="text-sm text-[#F39F5F] font-medium">What Drives Us</span>
-            </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#17012C] mb-4">
+      
+   <FadeDown>
+                  <div className="text-center mb-12">
+                    <h2 className="text-3xl md:text-4xl font-bold text-[#17012C] mb-3">
               Core Values That
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#F39F5F] via-[#5B3AEE] to-[#00ACCE]">
-                Define Our Agency
-              </span>
-            </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+<span className="text-[#F39F5F]">                  Define Our Agency
+</span>
+                    </h2>
+                    <p className="text-[#666666] max-w-2xl mx-auto">
               The principles that guide our work, shape our culture, and drive our commitment to your success
-            </p>
-          </div>
-        </FadeDown>
-
+                    </p>
+                  </div>
+                </FadeDown>
         {/* Values Grid */}
         <FadeUp>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
@@ -125,11 +116,7 @@ const Corevalues = () => {
                 <div className="relative p-6">
                   {/* Icon Section */}
                   <div className="flex items-center justify-between mb-4">
-                    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 ${value.iconBg}`}>
-                      <div style={{ color: value.iconColor }} className="text-2xl">
-                        {value.icon}
-                      </div>
-                    </div>
+                    
                     <div className="text-6xl font-bold opacity-5 group-hover:opacity-10 transition-opacity duration-300"
                          style={{ color: value.iconColor }}>
                       {String(value.id).padStart(2, '0')}
@@ -140,11 +127,6 @@ const Corevalues = () => {
                   <h3 className="text-xl font-bold text-[#17012C] mb-2 group-hover:translate-x-1 transition-transform duration-300">
                     {value.title}
                   </h3>
-
-                  {/* Tagline */}
-                  <p className="text-sm font-medium mb-3" style={{ color: value.iconColor }}>
-                    {value.tagline}
-                  </p>
 
                   {/* Description */}
                   <p className="text-gray-600 text-sm leading-relaxed mb-4">
@@ -181,11 +163,11 @@ const Corevalues = () => {
           <div className="text-center mt-16">
             <div className="inline-flex flex-col sm:flex-row items-center gap-4 bg-gradient-to-r from-gray-50 to-white rounded-2xl p-1 border border-gray-200 shadow-sm">
               <span className="text-gray-700 text-sm px-4 py-2">Ready to work with a values-driven agency?</span>
-              <Link href="/contact">
-                <button className="px-6 py-2 bg-gradient-to-r from-[#F39F5F] to-[#F39F5F]/80 text-white font-semibold rounded-xl hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg">
-                  Start Your Project →
-                </button>
-              </Link>
+             <Link href="/contact" className="shrink-0">
+            <button className="px-6 py-2.5 bg-gradient-to-r from-[#FF5C33] to-[#FF2D46] text-white rounded-sm font-medium hover:from-[#FF2D46] hover:to-[#FF5C33] transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 cursor-pointer" style={{ fontFamily: 'Figtree, sans-serif' }}>
+             Start A Project
+            </button>
+          </Link>
             </div>
           </div>
         </FadeUp>

@@ -39,7 +39,7 @@ const Banner = () => {
             </p>
             
             {/* CTA Button */}
-                              <Link href="/request-quote" className="shrink-0">
+                              <Link href="/contact" className="shrink-0">
 
             <div className="mt-8">
                             <button className="px-6 py-2.5 bg-gradient-to-r from-[#FF5C33] to-[#FF2D46] text-white rounded-sm font-medium hover:from-[#FF2D46] hover:to-[#FF5C33] transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 cursor-pointer" style={{ fontFamily: 'Figtree, sans-serif' }}>

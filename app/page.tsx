@@ -21,15 +21,12 @@ export default function Home() {
 <Banner />
 <Services />
 <Projects />
-
 <Testimonials />
 <Myprocess />
 <Blog />
 <FAQ />
 
-{/* <Corevalues /> */}
 
-<Contact />
 
     </main>
   );

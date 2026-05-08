@@ -67,7 +67,7 @@ const Hero = () => {
       headline: "The right solutions will help you achieve them faster",
       description: "Get the right software solutions tailored to your goals. Our dedicated full-stack team delivers measurable results with 100% satisfaction guaranteed.",
       ctaText: "GET QUOTE TODAY",
-      ctaLink: "/request-quote",
+      ctaLink: "/contact",
       secondaryCta: "Our Work",
       secondaryLink: "/#works",
       trustText: "5-star client reviews"
