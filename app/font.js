@@ -4,17 +4,17 @@ import localFont from 'next/font/local'
 export const eudoxusSans = localFont({
   src: [
     {
-      path: '../app/fonts/eudoxus-sans-light.ttf',
+      path: '../assets/fonts/eudoxus-sans-light.ttf',
       weight: '300',
       style: 'normal',
     },
     {
-      path: '../app/fonts/eudoxus-sans-regular.ttf',
+      path: '../assets/fonts/eudoxus-sans-regular.ttf',
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../app/fonts/eudoxus-sans-bold.ttf',
+      path: '../assets/fonts/eudoxus-sans-bold.ttf',
       weight: '700',
       style: 'normal',
     },
@@ -25,7 +25,7 @@ export const eudoxusSans = localFont({
 export const sora = localFont({
   src: [
     {
-      path: '../app/fonts/sora-regular.ttf',
+      path: '../assets/fonts/sora-regular.ttf',
       weight: '400',
       style: 'normal',
     },
