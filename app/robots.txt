@@ -8,6 +8,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://vercel.app',
+    // Fix this line to point to your specific site:
+    sitemap: 'https://siretech.vercel.app',
   }
 }
