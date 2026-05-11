@@ -470,11 +470,11 @@ const Portfolio = () => {
         <FadeUp delay={0.3}>
 
           <div className='w-full px-12 mb-8'>
-          <div className="text-center my-5 p-8 bg-gradient-to-r from-[#F39F5F]/10 to-[#219BE4]/10 rounded-2xl">
+          <div className="text-center my-5 p-8 bg-linear-to-r from-[#F39F5F]/10 to-[#219BE4]/10 rounded-2xl">
             <p className="text-[#200439] font-bold mb-2">Have  A Project In Mind ?</p>
             <p className="text-[#666666] mb-4"> Take the first step on reaching out to us</p>
             <Link href="/contact">
-              <button className="px-6 py-2.5 bg-gradient-to-r from-[#FF5C33] to-[#FF2D46] text-white rounded-sm font-medium hover:from-[#FF2D46] hover:to-[#FF5C33] transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 cursor-pointer" style={{ fontFamily: 'Figtree, sans-serif' }}>
+              <button className="px-6 py-2.5 bg-linear-to-r from-[#FF5C33] to-[#FF2D46] text-white rounded-sm font-medium hover:from-[#FF2D46] hover:to-[#FF5C33] transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 cursor-pointer" style={{ fontFamily: 'Figtree, sans-serif' }}>
                       Start Your Project Today
               </button>
             </Link>

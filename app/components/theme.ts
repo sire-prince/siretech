@@ -1,8 +1,8 @@
 // Shared theme constants for components to match Navbar styling
 export const primary = '#FF5C33'
 export const primaryAlt = '#FF2D46'
-export const gradientClass = 'bg-gradient-to-r from-[#FF5C33] to-[#FF2D46]'
-export const gradientClassBr = 'bg-gradient-to-br from-[#FF5C33] to-[#FF2D46]'
+export const gradientClass = 'bg-linear-to-r from-[#FF5C33] to-[#FF2D46]'
+export const gradientClassBr = 'bg-linear-to-br from-[#FF5C33] to-[#FF2D46]'
 export const navbarBgClass = 'bg-[#E9EAEF]'
 export const navbarText = 'text-[#333333]'
 export const navbarActive = 'text-[#FF5C33]'

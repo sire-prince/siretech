@@ -150,7 +150,7 @@ const FAQ = () => {
             </p>
             <a
               href="/contact"
-              className="inline-flex items-center bg-gradient-to-r from-[#FF5C33] to-[#FF2D46] gap-2 px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+              className="inline-flex items-center bg-linear-to-r from-[#FF5C33] to-[#FF2D46] gap-2 px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl"
               style={{ 
                 color: colors.bg,
                 boxShadow: `0 4px 15px ${colors.accent}40`

@@ -114,7 +114,7 @@ const Testimonials = () => {
   const totalSlides = Math.ceil(testimonialsData.length / cardsToShow);
 
   return (
-    <div className="relative overflow-hidden bg-gradient-to-b from-[#f8f9fa] to-white py-20 md:py-28">
+    <div className="relative overflow-hidden bg-linear-to-b from-[#f8f9fa] to-white py-20 md:py-28">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-20 right-10 w-64 h-64 bg-[#F39F5F]/10 rounded-full blur-3xl"></div>

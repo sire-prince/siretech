@@ -394,7 +394,7 @@ const page = () => {
             </div>
             {/* Bottom CTA - More Converting */}
               <FadeUp delay={0.3}>
-                <div className="text-center my-16 p-8 bg-gradient-to-r from-[#F39F5F]/10 to-[#219BE4]/10 rounded-2xl">
+                <div className="text-center my-16 p-8 bg-linear-to-r from-[#F39F5F]/10 to-[#219BE4]/10 rounded-2xl">
                   <p className="text-[#17012C] font-bold mb-2">Have a project in mind ?</p>
                   <p className="text-[#666666] mb-4">We build custom solutions tailored to your unique business needs</p>
                    <Link href="/contact">

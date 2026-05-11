@@ -69,7 +69,7 @@ const Corevalues = () => {
   ];
 
   return (
-    <div className="relative overflow-hidden bg-gradient-to-b from-white to-[#f8f9fa] py-20 md:py-28">
+  <div className="relative overflow-hidden bg-linear-to-b from-white to-[#f8f9fa] py-20 md:py-28">
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0 opacity-30 pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl"></div>
@@ -99,7 +99,7 @@ const Corevalues = () => {
             {values.map((value, index) => (
               <div
                 key={value.id}
-                className={`group relative bg-gradient-to-br ${value.bgGradient} rounded-2xl border border-gray-200 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer overflow-hidden`}
+                className={`group relative bg-linear-to-br ${value.bgGradient} rounded-2xl border border-gray-200 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer overflow-hidden`}
                 style={{ 
                   boxShadow: hoveredCard === value.id ? `0 20px 40px -15px ${value.iconColor}40` : '0 4px 6px -1px rgba(0,0,0,0.05)',
                   borderColor: hoveredCard === value.id ? value.iconColor : '#e5e7eb'
@@ -161,13 +161,13 @@ const Corevalues = () => {
         {/* Bottom CTA */}
         <FadeUp>
           <div className="text-center mt-16">
-            <div className="inline-flex flex-col sm:flex-row items-center gap-4 bg-gradient-to-r from-gray-50 to-white rounded-2xl p-1 border border-gray-200 shadow-sm">
+            <div className="inline-flex flex-col sm:flex-row items-center gap-4 bg-linear-to-r from-gray-50 to-white rounded-2xl p-1 border border-gray-200 shadow-sm">
               <span className="text-gray-700 text-sm px-4 py-2">Ready to work with a values-driven agency?</span>
-             <Link href="/contact" className="shrink-0">
-            <button className="px-6 py-2.5 bg-gradient-to-r from-[#FF5C33] to-[#FF2D46] text-white rounded-sm font-medium hover:from-[#FF2D46] hover:to-[#FF5C33] transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 cursor-pointer" style={{ fontFamily: 'Figtree, sans-serif' }}>
-             Start A Project
-            </button>
-          </Link>
+              <Link href="/contact" className="shrink-0">
+                <button className="px-6 py-2.5 bg-linear-to-r from-[#FF5C33] to-[#FF2D46] text-white rounded-sm font-medium hover:from-[#FF2D46] hover:to-[#FF5C33] transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 cursor-pointer" style={{ fontFamily: 'Figtree, sans-serif' }}>
+                  Start A Project
+                </button>
+              </Link>
             </div>
           </div>
         </FadeUp>

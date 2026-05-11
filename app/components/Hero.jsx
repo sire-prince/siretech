@@ -172,7 +172,7 @@ const Hero = () => {
             <div className="flex flex-col items-center sm:flex-row gap-6 mt-10">
               <FadeUp>
                 <Link href="/contact" className="shrink-0">
-                  <button className="px-6 py-2.5 bg-gradient-to-r from-[#FF5C33] to-[#FF2D46] text-white rounded-sm font-medium hover:from-[#FF2D46] hover:to-[#FF5C33] transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 cursor-pointer" style={{ fontFamily: 'Figtree, sans-serif' }}>
+                  <button className="px-6 py-2.5 bg-linear-to-r from-[#FF5C33] to-[#FF2D46] text-white rounded-sm font-medium hover:from-[#FF2D46] hover:to-[#FF5C33] transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 cursor-pointer" style={{ fontFamily: 'Figtree, sans-serif' }}>
                     Get In Touch
                   </button>
                 </Link>

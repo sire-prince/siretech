@@ -132,7 +132,7 @@ const Services = () => {
                 style={{ backgroundImage: `url('${service.bgImage}')` }}
               >
                 {/* Dark Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#02c2ed/70]  via-[#00A9CE]/60 to-[#17012C]/60 transition-all duration-300 group-hover:bg-[#17012C]/80" />
+                <div className="absolute inset-0 bg-linear-to-t from-[#02c2ed/70]  via-[#00A9CE]/60 to-[#17012C]/60 transition-all duration-300 group-hover:bg-[#17012C]/80" />
                 
                 <div className="relative z-10 p-8 min-h-[420px] flex flex-col">
                   
@@ -198,11 +198,11 @@ const Services = () => {
 
         {/* Bottom CTA - More Converting */}
         <FadeUp delay={0.3}>
-          <div className="text-center my-16 p-8 bg-gradient-to-r from-[#F39F5F]/10 to-[#219BE4]/10 rounded-2xl">
+          <div className="text-center my-16 p-8 bg-linear-to-r from-[#F39F5F]/10 to-[#219BE4]/10 rounded-2xl">
             <p className="text-[#17012C] font-bold mb-2">Don't see what you're looking for?</p>
             <p className="text-[#666666] mb-4">We build custom solutions tailored to your unique business needs</p>
             <Link href="/contact">
-              <button className="px-6 py-2.5 bg-gradient-to-r from-[#FF5C33] to-[#FF2D46] text-white rounded-sm font-medium hover:from-[#FF2D46] hover:to-[#FF5C33] transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 cursor-pointer" style={{ fontFamily: 'Figtree, sans-serif' }}>
+              <button className="px-6 py-2.5 bg-linear-to-r from-[#FF5C33] to-[#FF2D46] text-white rounded-sm font-medium hover:from-[#FF2D46] hover:to-[#FF5C33] transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 cursor-pointer" style={{ fontFamily: 'Figtree, sans-serif' }}>
                       Get Free Consultation →
               </button>
             </Link>

@@ -154,7 +154,7 @@ const Navbar = () => {
   return (
     <>
       {/* Desktop Header */}
-      <header className={`w-full fixed top-0 left-0 right-0 z-[9999] transition-all duration-300 ${
+      <header className={`w-full fixed top-0 left-0 right-0 z-9999 transition-all duration-300 ${
         scrolled 
           ? 'bg-[#E9EAEF]/95 backdrop-blur-md shadow-lg' 
           : 'bg-[#E9EAEF] shadow-md'
@@ -228,7 +228,7 @@ const Navbar = () => {
                 </button>
 
                 {desktopServicesOpen && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[650px] z-[9999]">
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[650px] z-9999">
                     <div className="bg-[#E9EAEF] rounded-2xl shadow-2xl border border-[#FF5C33]/20 overflow-hidden">
                       <div className="grid grid-cols-2 gap-3 p-6">
                         {solutions.map((solution, idx) => (
@@ -238,7 +238,7 @@ const Navbar = () => {
                             onClick={() => setDesktopServicesOpen(false)}
                             className="group flex items-start gap-4 p-4 rounded-xl hover:bg-white/50 transition-all duration-200"
                           >
-                            <div className={`bg-gradient-to-br ${solution.bgGradient} p-3 rounded-xl bg-white/50 group-hover:scale-110 transition-transform duration-200 shrink-0`}>
+                            <div className={`bg-linear-to-br ${solution.bgGradient} p-3 rounded-xl bg-white/50 group-hover:scale-110 transition-transform duration-200 shrink-0`}>
                               {solution.icon}
                             </div>
                             <div className="flex-1 text-left">
@@ -319,7 +319,7 @@ const Navbar = () => {
           </nav>
 
           <Link href="/contact" className="shrink-0" onClick={closeAllMenus}>
-            <button className="px-6 py-2.5 bg-gradient-to-r from-[#FF5C33] to-[#FF2D46] text-white rounded-sm font-medium hover:from-[#FF2D46] hover:to-[#FF5C33] transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 cursor-pointer" style={{ fontFamily: 'Figtree, sans-serif' }}>
+            <button className="px-6 py-2.5 bg-linear-to-r from-[#FF5C33] to-[#FF2D46] text-white rounded-sm font-medium hover:from-[#FF2D46] hover:to-[#FF5C33] transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 cursor-pointer" style={{ fontFamily: 'Figtree, sans-serif' }}>
               Get a Quote
             </button>
           </Link>
@@ -327,7 +327,7 @@ const Navbar = () => {
       </header>
 
       {/* Mobile Header */}
-      <header className={`w-full fixed top-0 left-0 right-0 z-[9999] transition-all duration-300 ${
+      <header className={`w-full fixed top-0 left-0 right-0 z-9999 transition-all duration-300 ${
         scrolled ? 'bg-[#E9EAEF]/95 backdrop-blur-md shadow-lg' : 'bg-[#E9EAEF] shadow-md'
       } block md:hidden`}>
         <div className="flex items-center justify-between px-4 py-3">
@@ -382,27 +382,27 @@ const Navbar = () => {
                     {mobileServicesOpen && (
                       <div className="mt-2 space-y-1 ml-4">
                         <Link href="/services/web-development" onClick={closeAllMenus} className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/50">
-                          <div className="bg-gradient-to-br from-[#FF5C33]/10 to-[#FF2D46]/10 p-2 rounded-lg"><FaGlobe className="w-5 h-5 text-[#FF5C33]" /></div>
+                          <div className="bg-linear-to-br from-[#FF5C33]/10 to-[#FF2D46]/10 p-2 rounded-lg"><FaGlobe className="w-5 h-5 text-[#FF5C33]" /></div>
                           <div><p className="font-medium text-[#333333] text-sm">Web Development</p><p className="text-xs text-[#868DA6]">Your first digital presence</p></div>
                         </Link>
                         <Link href="/services/mobile-apps" onClick={closeAllMenus} className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/50">
-                          <div className="bg-gradient-to-br from-[#FF5C33]/10 to-[#FF2D46]/10 p-2 rounded-lg"><FaMobile className="w-5 h-5 text-[#FF5C33]" /></div>
+                          <div className="bg-linear-to-br from-[#FF5C33]/10 to-[#FF2D46]/10 p-2 rounded-lg"><FaMobile className="w-5 h-5 text-[#FF5C33]" /></div>
                           <div><p className="font-medium text-[#333333] text-sm">Mobile Apps</p><p className="text-xs text-[#868DA6]">Custom Apps for Business</p></div>
                         </Link>
                         <Link href="/services/seo" onClick={closeAllMenus} className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/50">
-                          <div className="bg-gradient-to-br from-[#FF5C33]/10 to-[#FF2D46]/10 p-2 rounded-lg"><FaArrowCircleUp className="w-5 h-5 text-[#FF5C33] transform rotate-45" /></div>
+                          <div className="bg-linear-to-br from-[#FF5C33]/10 to-[#FF2D46]/10 p-2 rounded-lg"><FaArrowCircleUp className="w-5 h-5 text-[#FF5C33] transform rotate-45" /></div>
                           <div><p className="font-medium text-[#333333] text-sm">SEO</p><p className="text-xs text-[#868DA6]">Make your presence known</p></div>
                         </Link>
                         <Link href="/services/maintenance" onClick={closeAllMenus} className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/50">
-                          <div className="bg-gradient-to-br from-[#FF5C33]/10 to-[#FF2D46]/10 p-2 rounded-lg"><FaTools className="w-5 h-5 text-[#FF5C33]" /></div>
+                          <div className="bg-linear-to-br from-[#FF5C33]/10 to-[#FF2D46]/10 p-2 rounded-lg"><FaTools className="w-5 h-5 text-[#FF5C33]" /></div>
                           <div><p className="font-medium text-[#333333] text-sm">Website Maintenance</p><p className="text-xs text-[#868DA6]">Keep your website running smoothly</p></div>
                         </Link>
                         <Link href="/services/graphic-design" onClick={closeAllMenus} className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/50">
-                          <div className="bg-gradient-to-br from-[#FF5C33]/10 to-[#FF2D46]/10 p-2 rounded-lg"><FaPaintBrush className="w-5 h-5 text-[#FF5C33]" /></div>
+                          <div className="bg-linear-to-br from-[#FF5C33]/10 to-[#FF2D46]/10 p-2 rounded-lg"><FaPaintBrush className="w-5 h-5 text-[#FF5C33]" /></div>
                           <div><p className="font-medium text-[#333333] text-sm">Graphic Design</p><p className="text-xs text-[#868DA6]">Communicate your brand visually</p></div>
                         </Link>
                         <Link href="/services/brand-design" onClick={closeAllMenus} className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/50">
-                          <div className="bg-gradient-to-br from-[#FF5C33]/10 to-[#FF2D46]/10 p-2 rounded-lg"><FaPaintBrush className="w-5 h-5 text-[#FF5C33]" /></div>
+                          <div className="bg-linear-to-br from-[#FF5C33]/10 to-[#FF2D46]/10 p-2 rounded-lg"><FaPaintBrush className="w-5 h-5 text-[#FF5C33]" /></div>
                           <div><p className="font-medium text-[#333333] text-sm">Brand Design</p><p className="text-xs text-[#868DA6]">Create your brand identity</p></div>
                         </Link>
                         <Link href="/services" onClick={closeAllMenus} className="block text-center text-[#FF5C33] text-sm font-medium py-2 mt-2 hover:underline">View All Services →</Link>
@@ -418,7 +418,7 @@ const Navbar = () => {
 
               <div className="p-4 border-t border-[#FF5C33]/20 bg-white/30">
                 <Link href="/contact" onClick={closeAllMenus}>
-                  <button className="w-full px-6 py-3 bg-gradient-to-r from-[#FF5C33] to-[#FF2D46] text-white rounded-lg font-medium hover:from-[#FF2D46] hover:to-[#FF5C33] transition-all duration-200 cursor-pointer text-sm">
+                  <button className="w-full px-6 py-3 bg-linear-to-r from-[#FF5C33] to-[#FF2D46] text-white rounded-lg font-medium hover:from-[#FF2D46] hover:to-[#FF5C33] transition-all duration-200 cursor-pointer text-sm">
                     <FaEnvelope className="inline mr-2" /> Get a Quote
                   </button>
                 </Link>
@@ -429,7 +429,7 @@ const Navbar = () => {
       )}
 
       {/* Spacer */}
-      <div className="h-[57px] md:h-[80px]" />
+      <div className="h-[57px] md:h-20" />
     </>
   )
 }

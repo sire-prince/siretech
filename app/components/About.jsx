@@ -24,7 +24,7 @@ const About = () => {
   ];
 
   return (
-    <div id="about" className="w-full px-4 sm:px-6 md:px-8 py-20 md:py-28 bg-gradient-to-b from-white to-[#f8f9fa]">
+    <div id="about" className="w-full px-4 sm:px-6 md:px-8 py-20 md:py-28 bg-linear-to-b from-white to-[#f8f9fa]">
       <div className="max-w-7xl mx-auto">
         
         {/* Header Section */}
@@ -61,7 +61,7 @@ const About = () => {
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-tr from-[#17012C]/40 to-transparent"></div>
+                <div className="absolute inset-0 bg-linear-to-tr from-[#17012C]/40 to-transparent"></div>
               </div>
 
               <h3 className="text-2xl md:text-3xl font-bold text-[#17012C] mb-4">
@@ -131,7 +131,7 @@ const About = () => {
               </div>
 
               {/* Why Choose Us */}
-              <div className="bg-gradient-to-br from-[#17012C] to-[#2A0A4A] rounded-2xl p-6 md:p-8 mb-8 text-white">
+              <div className="bg-linear-to-br from-[#17012C] to-[#2A0A4A] rounded-2xl p-6 md:p-8 mb-8 text-white">
                 <h4 className="font-bold text-xl mb-4">Why Choose SireTech Agency?</h4>
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">

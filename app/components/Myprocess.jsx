@@ -81,7 +81,7 @@ const Myprocess = () => {
               >
                 {/* Timeline connector line (except last item) */}
                 {index < process.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/3 -right-4 w-8 h-0.5 bg-gradient-to-r from-[#5B3AEE]/30 to-[#F39F5F]/30">
+                  <div className="hidden lg:block absolute top-1/3 -right-4 w-8 h-0.5 bg-linear-to-r from-[#5B3AEE]/30 to-[#F39F5F]/30">
                     <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-2 h-2 rounded-full bg-[#F39F5F]"></div>
                   </div>
                 )}

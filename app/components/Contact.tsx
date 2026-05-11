@@ -362,7 +362,7 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {    event.
                   <button
                     type="submit"
                     disabled={isLoading}
-                    className="relative w-full px-6 py-2.5  text-white  bg-gradient-to-r from-[#FF5C33] to-[#FF2D46] font-medium hover:from-[#FF2D46] hover:to-[#FF5C33]  rounded-sm transition-all duration-300 hover:scale-105 hover:shadow-2xl overflow-hidden cursor-pointer text-sm group"
+                    className="relative w-full px-6 py-2.5  text-white  bg-linear-to-r from-[#FF5C33] to-[#FF2D46] font-medium hover:from-[#FF2D46] hover:to-[#FF5C33]  rounded-sm transition-all duration-300 hover:scale-105 hover:shadow-2xl overflow-hidden cursor-pointer text-sm group"
                     style={{ 
                       color: colors.bg,
                       boxShadow: `0 4px 15px ${colors.accent}40`

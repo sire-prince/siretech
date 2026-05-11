@@ -207,7 +207,7 @@ const Blog = () => {
             <div className="mb-12">
               <div className="relative rounded-2xl overflow-hidden group cursor-pointer">
                 <div className="relative h-[400px] md:h-[500px]">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent z-10" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/50 to-transparent z-10" />
                   <div className="w-full h-full bg-gray-900 flex items-center justify-center">
                     {/* Placeholder for featured image */}
                     <div className="text-center text-gray-500">[Featured Image: {featuredPost.title}]</div>
