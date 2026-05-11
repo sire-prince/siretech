@@ -37,7 +37,7 @@ const Services = () => {
   },
   {
     id: 4,
-    title: "Website Maintenance",
+    title: "Web Maintenance",
     description: "Keep your website safe, fast, and running smoothly without any technical hassle.",
     convertingMessage: "Never worry about hackers | Always up and running | Peace of mind",
     features: ["24/7 Protection", "Fast Loading", "Automatic Backups"],

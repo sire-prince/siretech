@@ -83,7 +83,7 @@ const Portfolio = () => {
     },
     {
       id: 'maintenance',
-      title: 'Website Maintenance',
+      title: 'Web Maintenance',
       color: '#17012C',
       fullDescription: `Regular updates, security monitoring, backups, and performance optimization. Focus on your business while we handle the technical side of keeping your website healthy.`,
       industries: ['All Industries'],
@@ -161,6 +161,7 @@ const Portfolio = () => {
       title: "E-Commerce Platform",
       category: "retail",
       industry: "Retail",
+      url:"project1",
       service: "web-development",
       description: "Complete online store with inventory management, payment integration, and customer analytics.",
       challenge: "No online presence and manual order management",
@@ -171,8 +172,23 @@ const Portfolio = () => {
       duration: "4 weeks",
       client: "Fashion Hub GH"
     },
-    {
-      id: 2,
+      {
+    id: 2,
+    title: "Property Management Platform",
+    category: "realestate",
+    industry: "Real Estate",
+    service: "mobile-apps",
+    description: "Property management platform for landlords with tenant portals, rent collection, and maintenance request tracking.",
+    challenge: "Manual rent collection and poor tenant communication",
+    solution: "Automated platform with mobile money integration and tenant self-service",
+    results: "95% on-time rent payments, 50% fewer maintenance delays",
+    technologies: ["React Native", "Node.js", "PostgreSQL", "Hubtel"],
+    icon: "🏘️",
+    duration: "4 weeks",
+    client: "Accra Property Group"
+  },
+  {
+      id: 3,
       title: "School Management System",
       category: "education",
       industry: "Education",
@@ -186,38 +202,9 @@ const Portfolio = () => {
       duration: "3 weeks",
       client: "Royal Heights School"
     },
-    {
-      id: 3,
-      title: "Real Estate Management",
-      category: "realestate",
-      industry: "Real Estate",
-      service: "mobile-apps",
-      description: "Property management platform for landlords with tenant portals, rent collection, and maintenance request tracking.",
-      challenge: "Manual rent collection and poor tenant communication",
-      solution: "Automated platform with mobile money integration and tenant self-service",
-      results: "95% on-time rent payments, 50% fewer maintenance delays",
-      technologies: ["React Native", "Node.js", "PostgreSQL", "Hubtel"],
-      icon: "🏘️",
-      duration: "4 weeks",
-      client: "Accra Property Group"
-    },
-    {
+   
+   {
       id: 4,
-      title: "Hotel Booking System",
-      category: "retail",
-      industry: "Retail",
-      service: "web-development",
-      description:"A Hotel Booking System is a digital platform that automates room reservations, payments, and guest management. It syncs real-time availability across websites and travel agencies to prevent overbooking while allowing guests to book 24/7.",
-      challenge: "Stock discrepancies across multiple locations",
-      solution: "Real-time inventory tracking with offline capabilities",
-      results: "40% reduction in stockouts, 30% faster checkouts",
-      technologies: ["Next.js", "Express", "SQLite", "Paystack"],
-      icon: "🏪",
-      duration: "3 weeks",
-      client: "City Mart Stores"
-    },
-    {
-      id: 5,
       title: "Barbar Shop SMEs Management Platform",
       category: "religious",
       industry: "Religious",
@@ -230,8 +217,8 @@ const Portfolio = () => {
       duration: "2 weeks",
       client: "Victory Chapel International"
     },
-    {
-      id: 6,
+  {
+      id: 5,
       title: "Restaurant / Lounge Dispatch System",
       category: "logistics",
       industry: "Logistics",
@@ -244,7 +231,21 @@ const Portfolio = () => {
       duration: "5 weeks",
       client: "Swift Logistics GH"
     },
- 
+     {
+    id: 6,
+    title: "Logistics Dispatch System",
+    category: "logistics",
+    industry: "Logistics",
+    service: "mobile-apps",
+    description: "Real-time logistics designed for speed and built for scale, it is the only tool you need to ensure your goods arrive exactly when and where they should.",
+    challenge: "Inefficient route planning and delayed deliveries",
+    solution: "AI-powered route optimization and real-time tracking",
+    results: "95% on-time deliveries, 50% reduction in delays",
+    technologies: ["React Native", "Node.js", "PostgreSQL", "Google Maps API"],
+    icon: "🚚",
+    duration: "4 weeks",
+    client: "Swift Logistics GH"
+  },
   ];
 
   const getProjectsByService = (serviceId) => projects.filter(p => p.service === serviceId);
@@ -378,7 +379,7 @@ const Portfolio = () => {
               <div className="group bg-white overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer" onClick={() => setSelectedProject(project)}>
                 <div className="relative h-58 overflow-hidden">
                   <Image 
-                    src={`/project${project.id}.jpg`}
+                    src={`/proj${project.id}.jpg`}
                     alt={project.title}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-100"
@@ -455,6 +456,7 @@ const Portfolio = () => {
           </div>
         )}
       </div>
+      
     </div>
   );
 };

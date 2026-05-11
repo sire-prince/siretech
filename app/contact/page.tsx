@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { 
   FadeUp, 
   FadeDown, 
@@ -37,15 +37,18 @@ const colors = {
 const Contact = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [buttonText, setButtonText] = useState('Send Message');
+  const formRef = useRef<HTMLFormElement>(null);
 
-  async function handleSubmit(event) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setIsLoading(true);
+    setButtonText('Sending...');
 
     const formData = new FormData(event.currentTarget);
 
     try {
-      const response = await fetch('https://formspree.io/f/xqaozrnb', {
+      const response = await fetch('https://formspree.io/f/xojrkzgw', {
         method: 'POST',
         body: formData,
         headers: {
@@ -54,17 +57,30 @@ const Contact = () => {
       });
 
       if (response.ok) {
-        setIsSubmitted(true);
-        event.currentTarget.reset();
+        // Reset form using ref instead of event.currentTarget
+        if (formRef.current) {
+          formRef.current.reset();
+        }
         
+        // Change button to "Sent!"
+        setButtonText('Sent! ✓');
+        setIsSubmitted(true);
+        
+        // Reset button back to "Send Message" after 3 seconds
         setTimeout(() => {
+          setButtonText('Send Message');
           setIsSubmitted(false);
-        }, 5000);
+        }, 3000);
       } else {
-        throw new Error('Form submission failed');
+        setButtonText('Send Message');
+        const errorData = await response.json();
+        console.error('Form error:', errorData);
+        alert('There was an error sending your message. Please try again.');
       }
     } catch (error) {
       console.error('Error submitting form:', error);
+      setButtonText('Send Message');
+      alert('Network error. Please check your connection and try again.');
     } finally {
       setIsLoading(false);
     }
@@ -79,29 +95,22 @@ const Contact = () => {
       color: "#25D366",
       description: "Quick response within minutes"
     },
-    {
-      icon: <FaEnvelope className="text-lg" />,
-      title: "Email",
-      value: "prince.akpadie@gmail.com",
-      link: "mailto:prince.akpadie@gmail.com",
-      color: colors.accent,
-      description: "We reply within 24 hours"
-    },
+   
     {
       icon: <FaPhone className="text-lg" />,
       title: "Phone",
       value: "+233 245 546 733",
-      link: "tel:+233 245 546 733",
+      link: "tel:+233245546733",
       color: colors.primaryLight,
       description: "Mon-Fri, 9am-6pm"
     },
     {
       icon: <FaMapMarkerAlt className="text-lg" />,
       title: "Location",
-      value: "Accra Digital Centre",
+      value: "Ghana Accra, Tema",
       link: "https://maps.google.com",
       color: colors.blue,
-      description: "Accra, Ghana"
+      description: "We also work remotely with clients worldwide"
     }
   ];
 
@@ -126,7 +135,7 @@ const Contact = () => {
               Get In Touch
               <span className="text-[#F39F5F]">  With Us</span>
             </h2>
-            <p className="text-[#666666] max-w-2xl mx-auto">
+            <p className="text-[#666666] max-w-2xl mx-auto font-bold">
               Whether you have a project in mind or just want to say hello, we'd love to hear from you.
             </p>
           </div>
@@ -163,7 +172,7 @@ const Contact = () => {
           <div className="relative z-10 flex flex-col justify-center h-full px-6 sm:px-8 md:px-12 py-12 md:py-16">
             <FadeDown>
               <h2 className="text-xl md:text-2xl font-bold text-[#17012C] mb-10">
-                <span className="text-[#ffffff]"> our team members will get back to you within 24 business hours to schedule a project discovery call. </span>
+                <span className="text-[#ffffff]"> Our team members will get back to you within 24 business hours to schedule a project discovery call. </span>
               </h2>
             </FadeDown>
             <FadeLeft>
@@ -218,7 +227,7 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* RIGHT SIDE - Contact Form - FULL WIDTH */}
+        {/* RIGHT SIDE - Contact Form */}
         <div className="w-full lg:w-1/2 flex items-center justify-center px-6 sm:px-8 md:px-12 py-12 md:py-16">
           <FadeRight>
             <div className="w-full">
@@ -229,154 +238,150 @@ const Contact = () => {
                 <p className="text-sm" style={{ color: colors.textMuted }}>Fill out the form and we will get back to you shortly.</p>
               </div>
               
-              {isSubmitted ? (
-                <div className="rounded-xl p-6 text-center" style={{ 
-                  background: `${colors.accent}10`, 
-                  border: `1px solid ${colors.accent}30` 
-                }}>
-                  <FaCheckCircle className="text-4xl mx-auto mb-3" style={{ color: colors.accent }} />
-                  <h4 className="text-lg font-bold mb-1" style={{ color: colors.accent }}>Message Sent!</h4>
-                  <p className="text-xs" style={{ color: colors.textMuted }}>Thank you for reaching out. We will get back to you within 24 hours.</p>
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <label className="block text-xs font-semibold mb-1.5" style={{ color: colors.textDark }}>
+                    Name or Business Name *
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-[#F39F5F] focus:ring-2 focus:ring-[#F39F5F]/20 transition-all text-sm"
+                    style={{ 
+                      background: 'white',
+                      borderColor: '#e0e0e0',
+                      color: colors.textDark
+                    }}
+                    placeholder="John Doe"
+                  />
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
+                
+                <div>
+                  <label className="block text-xs font-semibold mb-1.5" style={{ color: colors.textDark }}>
+                    Email *
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-[#F39F5F] focus:ring-2 focus:ring-[#F39F5F]/20 transition-all text-sm"
+                    style={{ 
+                      background: 'white',
+                      borderColor: '#e0e0e0',
+                      color: colors.textDark
+                    }}
+                    placeholder="hello@example.com"
+                  />
+                </div>
+                
+                <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-semibold mb-1.5" style={{ color: colors.textDark }}>
-                      Name or Business Name *
+                      Phone (Optional)
                     </label>
                     <input
-                      type="text"
-                      name="name"
-                      required
+                      type="tel"
+                      name="phone"
                       className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-[#F39F5F] focus:ring-2 focus:ring-[#F39F5F]/20 transition-all text-sm"
                       style={{ 
                         background: 'white',
                         borderColor: '#e0e0e0',
                         color: colors.textDark
                       }}
-                      placeholder="John Doe"
+                      placeholder="+233 XX XXX XXXX"
                     />
                   </div>
                   
                   <div>
                     <label className="block text-xs font-semibold mb-1.5" style={{ color: colors.textDark }}>
-                      Email *
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      required
-                      className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-[#F39F5F] focus:ring-2 focus:ring-[#F39F5F]/20 transition-all text-sm"
-                      style={{ 
-                        background: 'white',
-                        borderColor: '#e0e0e0',
-                        color: colors.textDark
-                      }}
-                      placeholder="hello@example.com"
-                    />
-                  </div>
-                  
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-xs font-semibold mb-1.5" style={{ color: colors.textDark }}>
-                        Phone (Optional)
-                      </label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-[#F39F5F] focus:ring-2 focus:ring-[#F39F5F]/20 transition-all text-sm"
-                        style={{ 
-                          background: 'white',
-                          borderColor: '#e0e0e0',
-                          color: colors.textDark
-                        }}
-                        placeholder="+233 XX XXX XXXX"
-                      />
-                    </div>
-                    
-                    <div>
-                      <label className="block text-xs font-semibold mb-1.5" style={{ color: colors.textDark }}>
-                        Project Type *
-                      </label>
-                      <select
-                        name="project"
-                        required
-                        className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-[#F39F5F] focus:ring-2 focus:ring-[#F39F5F]/20 transition-all text-sm"
-                        style={{ 
-                          background: 'white',
-                          borderColor: '#e0e0e0',
-                          color: colors.textDark
-                        }}
-                      >
-                        <option value="">Select project type</option>
-                        <option value="website">Website Development</option>
-                        <option value="mobile">Mobile App Development</option>
-                        <option value="seo">SEO & Digital Marketing</option>
-                        <option value="maintenance">Website Maintenance</option>
-                        <option value="other">Other</option>
-                      </select>
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <label className="block text-xs font-semibold mb-1.5" style={{ color: colors.textDark }}>
-                      Budget Range (Optional)
+                      Project Type *
                     </label>
                     <select
-                      name="budget"
-                      className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-[#f35f5f] focus:ring-2 focus:ring-[#F39F5F]/20 transition-all text-sm"
+                      name="project"
+                      required
+                      className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-[#F39F5F] focus:ring-2 focus:ring-[#F39F5F]/20 transition-all text-sm"
                       style={{ 
                         background: 'white',
                         borderColor: '#e0e0e0',
                         color: colors.textDark
                       }}
                     >
-                      <option value="">Select budget range</option>
-                      <option value="under-2k">Under GHS 2,000</option>
-                      <option value="2k-5k">GHS 2,000 - GHS 5,000</option>
-                      <option value="5k-15k">GHS 5,000 - GHS 15,000</option>
-                      <option value="15k-30k">GHS 15,000 - GHS 30,000</option>
-                      <option value="30k+">GHS 30,000+</option>
+                      <option value="">Select project type</option>
+                      <option value="website">Website Development</option>
+                      <option value="mobile">Mobile App Development</option>
+                      <option value="seo">SEO & Digital Marketing</option>
+                      <option value="maintenance">Website Maintenance</option>
+                      <option value="other">Other</option>
                     </select>
                   </div>
-                  
-                  <div>
-                    <label className="block text-xs font-semibold mb-1.5" style={{ color: colors.textDark }}>
-                      Message *
-                    </label>
-                    <textarea
-                      name="message"
-                      required
-                      rows={5}
-                      className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-[#F39F5F] focus:ring-2 focus:ring-[#F39F5F]/20 transition-all resize-vertical text-sm"
-                      style={{ 
-                        background: 'white',
-                        borderColor: '#e0e0e0',
-                        color: colors.textDark
-                      }}
-                      placeholder="Tell us about your project..."
-                    />
-                  </div>
-                  
-                  <button
-                    type="submit"
-                    disabled={isLoading}
-                    className="relative w-full px-6 py-2.5  text-white  bg-gradient-to-r from-[#FF5C33] to-[#FF2D46] font-medium hover:from-[#FF2D46] hover:to-[#FF5C33]  rounded-sm transition-all duration-300 hover:scale-105 hover:shadow-2xl overflow-hidden cursor-pointer text-sm group"
+                </div>
+                
+                <div>
+                  <label className="block text-xs font-semibold mb-1.5" style={{ color: colors.textDark }}>
+                    Budget Range (Optional)
+                  </label>
+                  <select
+                    name="budget"
+                    className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-[#F39F5F] focus:ring-2 focus:ring-[#F39F5F]/20 transition-all text-sm"
                     style={{ 
-                      color: colors.bg,
-                      boxShadow: `0 4px 15px ${colors.accent}40`
+                      background: 'white',
+                      borderColor: '#e0e0e0',
+                      color: colors.textDark
                     }}
                   >
-                    <span className="relative z-10 flex items-center justify-center gap-2">
-                      {isLoading ? 'Sending...' : 'Send Message'}
+                    <option value="">Select budget range</option>
+                    <option value="under-2k">Under GHS 2,000</option>
+                    <option value="2k-5k">GHS 2,000 - GHS 5,000</option>
+                    <option value="5k-15k">GHS 5,000 - GHS 15,000</option>
+                    <option value="15k-30k">GHS 15,000 - GHS 30,000</option>
+                    <option value="30k+">GHS 30,000+</option>
+                  </select>
+                </div>
+                
+                <div>
+                  <label className="block text-xs font-semibold mb-1.5" style={{ color: colors.textDark }}>
+                    Message *
+                  </label>
+                  <textarea
+                    name="message"
+                    required
+                    rows={5}
+                    className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-[#F39F5F] focus:ring-2 focus:ring-[#F39F5F]/20 transition-all resize-vertical text-sm"
+                    style={{ 
+                      background: 'white',
+                      borderColor: '#e0e0e0',
+                      color: colors.textDark
+                    }}
+                    placeholder="Tell us about your project..."
+                  />
+                </div>
+                
+                <button
+                  type="submit"
+                  disabled={isLoading}
+                  className="relative w-full px-6 py-2.5 text-white bg-gradient-to-r from-[#FF5C33] to-[#FF2D46] font-medium hover:from-[#FF2D46] hover:to-[#FF5C33] rounded-sm transition-all duration-300 hover:scale-105 hover:shadow-2xl overflow-hidden cursor-pointer text-sm group"
+                  style={{ 
+                    color: colors.bg,
+                    boxShadow: `0 4px 15px ${colors.accent}40`,
+                    opacity: isLoading ? 0.8 : 1
+                  }}
+                >
+                  <span className="relative z-10 flex items-center justify-center gap-2">
+                    {buttonText}
+                    {!isSubmitted && buttonText === 'Send Message' && (
                       <FaArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                    </span>
-                  </button>
+                    )}
+                    {buttonText === 'Sent! ✓' && (
+                      <FaCheckCircle className="w-3.5 h-3.5" />
+                    )}
+                  </span>
+                </button>
 
-                  <p className="text-center text-[10px] mt-4" style={{ color: colors.textMuted }}>
-                    By submitting, you have taken the first step towards bringing your vision to life.                  </p>
-                </form>
-              )}
+                <p className="text-center text-[10px] mt-4" style={{ color: colors.textMuted }}>
+                  By submitting, you have taken the first step towards bringing your vision to life.
+                </p>
+              </form>
             </div>
           </FadeRight>
         </div>

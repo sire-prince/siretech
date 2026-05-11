@@ -9,7 +9,6 @@ import {
   FadeLeft, 
   FadeRight 
 } from '../components/Reveal';
-import { fontFamily } from './theme';
 import { 
   FaCalendarAlt, 
   FaUser, 
@@ -133,7 +132,7 @@ const Blog = () => {
   return (
     <section id="blog" className="relative w-full overflow-hidden py-16 md:py-20" style={{ 
       background: 'transparent',
-      fontFamily 
+      
     }}>
       
       {/* Animated background blobs */}

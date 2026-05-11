@@ -204,7 +204,7 @@ We build solutions that solve real business problems
     <div className="w-full">
       <div className="mb-8">
         <h3 className="text-2xl md:text-3xl font-bold mb-3" style={{ color: colors.primary }}>
-          Making a Difference Together
+         The Best At What We Do 
         </h3>
         <p className="text-md leading-relaxed" style={{ color: colors.textMuted }}>
           <strong>SireTech</strong> specializes in the design, development, and implementation of custom applications, software, and digital marketing solutions. Founded with a vision to make quality technology accessible, we have grown into a trusted partner for businesses across Ghana and beyond.
@@ -235,7 +235,7 @@ We build solutions that solve real business problems
           
           <div>
             <strong className="block text-[#17012C] mb-1">2. Technology Agnostic — We Speak Your Language</strong>
-            <p className="text-sm" style={{ color: colors.textMuted }}>React, Next.js, Node.js, Python, Flutter — we listen to your needs first, then select the right technology for your project.</p>
+            <p className="text-sm" style={{ color: colors.textMuted }}>We listen to your needs first, then select the right technology for your project.</p>
           </div>
           
           <div>
@@ -255,7 +255,7 @@ We build solutions that solve real business problems
           
           <div>
             <strong className="block text-[#17012C] mb-1">6. Local Roots, Global Reach</strong>
-            <p className="text-sm" style={{ color: colors.textMuted }}>Based in Accra, we understand the local business landscape — from mobile money integrations to offline-first considerations — while serving clients worldwide.</p>
+            <p className="text-sm" style={{ color: colors.textMuted }}>Based in Accra, we understand the local business landscape — from mobile money integrations to offline-first considerations — while serving clients worldwide based on real expirience.</p>
           </div>
           
           <div>

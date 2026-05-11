@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import { FadeUp,FadeDown } from '../components/Reveal'
+import Myprocess from '../components/Myprocess'
 import Link from 'next/link'
 
 const Services = () => {
@@ -37,7 +38,7 @@ const Services = () => {
   },
   {
     id: 4,
-    title: "Website Maintenance",
+    title: "Web Maintenance",
     description: "Keep your website safe, fast, and running smoothly without any technical hassle.",
     convertingMessage: "Never worry about hackers | Always up and running | Peace of mind",
     features: ["24/7 Protection", "Fast Loading", "Automatic Backups"],
@@ -68,6 +69,9 @@ const Services = () => {
 ]
 
   return (
+    
+
+    <>
       <section id="contact" className="relative w-full overflow-hidden" style={{ 
       background: 'transparent',
     }}>         {/* Section Header */}
@@ -75,7 +79,7 @@ const Services = () => {
           {/* Background Image */}
           <div className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                style={{ 
-                 backgroundImage: "url('/about-banner.jpg')",
+                 backgroundImage: "url('/services-banner.jpg')",
                }}>
           </div>
           
@@ -106,7 +110,19 @@ const Services = () => {
             </p>
           </div>
         </FadeUp>
-
+    {/* Block 1 - Services Tags */}
+          <div className="text-center mb-10">
+            <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
+              {["", "Web Development", "ECommerce", "SEO", "Brand Design", "App Development", "Graphic Design", "Website Maintenance", ""].map((tag, index) => (
+                <span 
+                  key={index}
+                  className="px-4 py-2 rounded-full bg-[#EAF3F8] border border-[#5B3AEE]/20 text-[#17012C] text-sm font-medium hover:border-[#F39F5F]/40 hover:bg-[#ECF8FF] transition-all duration-300 hover:scale-105"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
         {/* Services Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
@@ -195,6 +211,8 @@ const Services = () => {
 
       </div>
     </section>
+   <Myprocess />
+    </>
   )
 }
 
