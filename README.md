@@ -1,3 +1,63 @@
+# SirePrince — SireTech Website
+
+Landing site and portfolio for SirePrince / SireTech built with Next.js and React.
+
+## Overview
+
+- Modern, responsive marketing site showcasing services, projects, and contact form.
+- Built with Next.js (App Router), React components, and Tailwind-style utility classes.
+
+## Features
+
+- Homepage, About, Projects, Services, Pricing, Contact sections.
+- Contact form integrated with Formspree for submissions.
+- Responsive layout and social links.
+
+## Quick Start
+
+1. Install dependencies
+
+   ```bash
+   npm install
+   ```
+
+2. Run the development server
+
+   ```bash
+   npm run dev
+   ```
+
+3. Build for production
+
+   ```bash
+   npm run build
+   npm run start
+   ```
+
+## Deployment
+
+- This project is ready to deploy to Vercel, Netlify, or any Node.js host that supports Next.js.
+- For Vercel, just connect the repository and use the default build command `npm run build`.
+
+## Environment
+
+- No special environment variables are required for the public site. If you add secrets (e.g., analytics keys), store them in your deployment platform's environment settings.
+
+## Contributing
+
+If you want to contribute improvements or fixes:
+
+1. Fork the repo
+2. Create a feature branch
+3. Open a pull request with a concise description
+
+## License
+
+This repository does not include a license file. Add one if you intend to grant usage rights.
+
+## Contact
+
+Owner: Prince — prince.akpadie@gmail.com
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

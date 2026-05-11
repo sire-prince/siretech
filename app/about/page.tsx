@@ -42,8 +42,7 @@ const Contact = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  async function handleSubmit(event) {
-    event.preventDefault();
+async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {    event.preventDefault();
     setIsLoading(true);
 
     const formData = new FormData(event.currentTarget);

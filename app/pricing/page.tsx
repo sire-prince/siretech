@@ -32,7 +32,7 @@ const colors = {
 }
 
 const ServicesPricing = () => {
-  const [activeService, setActiveService] = useState(null);
+  const [activeService, setActiveService] = useState<any | null>(null);
   const [showPricing, setShowPricing] = useState(true);
 
  const services = [
@@ -420,7 +420,7 @@ const ServicesPricing = () => {
                       <div>
                         <h4 className="font-semibold text-[#17012C] mb-3">Industries We Serve</h4>
                         <div className="flex flex-wrap gap-2">
-                          {activeService.industries.slice(0, 8).map((industry, idx) => (
+                          {activeService.industries.slice(0, 8).map((industry: string, idx: number) => (
                             <span key={idx} className="px-3 py-1.5 rounded-full text-xs font-medium" style={{ backgroundColor: `${activeService.color}15`, color: activeService.color }}>
                               {industry}
                             </span>
@@ -472,7 +472,7 @@ const ServicesPricing = () => {
                     </div>
                     <p className="text-xs text-gray-500 mb-4">Delivery: {activeService.deliveryTime.starter}</p>
                     <ul className="space-y-2 mb-10">
-                      {activeService.features.starter.map((feature, idx) => (
+                      {activeService.features.starter.map((feature: string, idx: number) => (
                         <li key={idx} className="flex items-start gap-2 py-1 text-sm">
                           <FaCheckCircle className="w-3.5 h-3.5 mt-0.5 shrink-0" style={{ color: activeService.color }} />
                           <span className="text-gray-500 font-bold">{feature}</span>
@@ -505,7 +505,7 @@ const ServicesPricing = () => {
                     </div>
                     <p className="text-xs text-gray-500 mb-4">Delivery: {activeService.deliveryTime.business}</p>
                     <ul className="space-y-2 mb-10">
-                      {activeService.features.business.map((feature, idx) => (
+                      {activeService.features.business.map((feature: string, idx: number) => (
                         <li key={idx} className="flex items-start gap-2 py-1 text-sm">
                           <FaCheckCircle className="w-3.5 h-3.5 mt-0.5 shrink-0" style={{ color: activeService.color }} />
                           <span className="text-gray-500 font-bold">{feature}</span>
@@ -535,7 +535,7 @@ const ServicesPricing = () => {
                     </div>
                     <p className="text-xs text-gray-500 mb-4">Delivery: {activeService.deliveryTime.enterprise}</p>
                     <ul className="space-y-2 mb-10">
-                      {activeService.features.enterprise.map((feature, idx) => (
+                      {activeService.features.enterprise.map((feature: string, idx: number) => (
                         <li key={idx} className="flex items-start gap-2 py-1 text-sm">
                           <FaCheckCircle className="w-3.5 h-3.5 mt-0.5 shrink-0" style={{ color: activeService.color }} />
                           <span className="text-gray-500 font-bold">{feature}</span>

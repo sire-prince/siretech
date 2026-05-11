@@ -15,7 +15,7 @@ import {
 import Link from 'next/link';
 
 const Corevalues = () => {
-  const [hoveredCard, setHoveredCard] = useState(null);
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   const values = [
     {
