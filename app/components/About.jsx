@@ -57,7 +57,7 @@ const About = () => {
               <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden mb-8 shadow-xl">
                 <Image
                   src="/about-hero.jpg"
-                  alt="SireTech Agency Team"
+                  alt="SireHub Agency Team"
                   fill
                   className="object-cover"
                 />
@@ -69,7 +69,7 @@ const About = () => {
               </h3>
               
               <p className="text-[#555555] leading-relaxed mb-4">
-                Headquartered in Accra, Ghana, <strong className="text-[#F39F5F]">SireTech Agency</strong> has established itself as the provider of choice for top companies and small businesses alike. We specialize in building clean, accessible websites and web applications that drive measurable results.
+                Headquartered in Accra, Ghana, <strong className="text-[#F39F5F]">SireHub Agency</strong> has established itself as the provider of choice for top companies and small businesses alike. We specialize in building clean, accessible websites and web applications that drive measurable results.
               </p>
               
               <p className="text-[#555555] leading-relaxed mb-4">
@@ -132,7 +132,7 @@ const About = () => {
 
               {/* Why Choose Us */}
               <div className="bg-linear-to-br from-[#17012C] to-[#2A0A4A] rounded-2xl p-6 md:p-8 mb-8 text-white">
-                <h4 className="font-bold text-xl mb-4">Why Choose SireTech Agency?</h4>
+                <h4 className="font-bold text-xl mb-4">Why Choose SireHub Agency?</h4>
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
                     <span className="text-[#F39F5F] text-lg">✓</span>

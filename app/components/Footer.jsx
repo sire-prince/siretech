@@ -29,7 +29,7 @@ const Footer = () => {
           <FadeUp>
             <div className="text-center md:text-left">
               <p className="text-sm text-gray-300">
-                SireTech © copyright {currentYear}. All rights reserved.
+                SireHub © copyright {currentYear}. All rights reserved.
               </p>
             </div>
           </FadeUp>

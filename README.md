@@ -1,6 +1,6 @@
-# SirePrince — SireTech Website
+# SirePrince — SireHub Website
 
-Landing site and portfolio for SirePrince / SireTech built with Next.js and React.
+Landing site and portfolio for SirePrince / SireHub built with Next.js and React.
 
 ## Overview
 

@@ -206,7 +206,7 @@ We build solutions that solve real business problems
          The Best At What We Do 
         </h3>
         <p className="text-md leading-relaxed" style={{ color: colors.textMuted }}>
-          <strong>SireTech</strong> specializes in the design, development, and implementation of custom applications, software, and digital marketing solutions. Founded with a vision to make quality technology accessible, we have grown into a trusted partner for businesses across Ghana and beyond.
+          <strong>SireHub</strong> specializes in the design, development, and implementation of custom applications, software, and digital marketing solutions. Founded with a vision to make quality technology accessible, we have grown into a trusted partner for businesses across Ghana and beyond.
         </p>
         <p className="text-md leading-relaxed mt-4" style={{ color: colors.textMuted }}>
           <strong>What makes us different?</strong>
@@ -220,7 +220,7 @@ We build solutions that solve real business problems
       
       <div className="mb-6">
         <h3 className="text-2xl md:text-3xl font-bold mb-3" style={{ color: colors.primary }}>
-          Why SireTech?
+          Why SireHub?
         </h3>
         <p className="text-md leading-relaxed mb-4" style={{ color: colors.textMuted }}>
           You have a vision. Perhaps it is an application that simplifies a complex process. A website that authentically represents your brand. Software that saves your team valuable time each week.

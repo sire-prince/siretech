@@ -6,18 +6,18 @@ import WhatsAppbtn from "./components/WhatsAppbtn";
 import { eudoxusSans } from "./font";
 
 const siteConfig = {
-  name: 'SireTech',
-  url: 'https://siretech.vercel.app',
-  author: 'SireTech',
+  name: 'SireHub',
+  url: 'https://SireHub.vercel.app',
+  author: 'SireHub',
   location: 'Accra, Ghana',
   founded: '2020',
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://vercel.app'), // Added URL directly
+  metadataBase: new URL('https://SireHub.vercel.app'), // Added URL directly
   title: {
-    default: 'SireTech | Premier Software Development & Web Design Agency in Ghana',
-    template: '%s | SireTech',
+    default: 'SireHub | Premier Software Development & Web Design Agency in Ghana',
+    template: '%s | SireHub',
   },
   description: 'Ghana\'s premier software development and web design agency. We build custom websites, mobile apps, and digital solutions that drive business growth. 2-4 week delivery. 150+ businesses served.',
   keywords: [
@@ -34,28 +34,28 @@ export const metadata: Metadata = {
     'software development accra', 'web design company ghana', 'digital solutions west africa',
     'tech company accra ghana', 'IT services ghana',
   ],
-  authors: [{ name: 'SireTech', url: 'https://vercel.app' }],
-  creator: 'SireTech',
-  publisher: 'SireTech Digital Agency',
+  authors: [{ name: 'SireHub', url: 'https://SireHub.vercel.app' }],
+  creator: 'SireHub',
+  publisher: 'SireHub Digital Agency',
   openGraph: {
     type: 'website',
     locale: 'en_GH',
-    url: 'https://vercel.app',
-    siteName: 'SireTech Digital Agency',
-    title: 'SireTech | Premier Software Development & Web Design Agency in Ghana',
+    url: 'https://SireHub.vercel.app',
+    siteName: 'SireHub Digital Agency',
+    title: 'SireHub | Premier Software Development & Web Design Agency in Ghana',
     description: 'Transform your business with custom software, websites, and mobile apps. Trusted by 150+ businesses. 2-4 week delivery. Based in Accra, serving globally.',
     images: [{
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'SireTech - Premier Software Development Agency Ghana',
+        alt: 'SireHub - Premier Software Development Agency Ghana',
     }],
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@SireTech',
+    site: '@SireHub',
     creator: '@SirePrince_7',
-    title: 'SireTech | Software Development & Web Design Agency',
+    title: 'SireHub | Software Development & Web Design Agency',
     description: 'Ghana\'s premier digital agency. Custom software, web design, mobile apps, and SEO. 2-4 week delivery. Results guaranteed.',
     images: ['/twitter-image.jpg'],
   },
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://vercel.app',
+    canonical: 'https://SireHub.vercel.app',
   },
   category: 'Technology',
   verification: {
@@ -112,7 +112,7 @@ export default function RootLayout({
         <meta property="fb:app_id" content="your-app-id" />
         
         {/* LinkedIn Meta Tags */}
-        <meta name="linkedin:owner" content="SireTech" />
+        <meta name="linkedin:owner" content="SireHub" />
         
         {/* Additional SEO */}
         <meta name="rating" content="General" />

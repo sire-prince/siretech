@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       disallow: '/private/',
     },
     // Fix this line to point to your specific site:
-    sitemap: 'https://siretech.vercel.app',
+    sitemap: 'https://SireHub.vercel.app',
   }
 }

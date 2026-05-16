@@ -165,14 +165,14 @@ const Navbar = () => {
             <div className="relative w-10 h-10 rounded-full overflow-hidden bg-white shadow-md">
               <Image 
                 src="/logo.jpg"
-                alt="SireTech Logo"
+                alt="SireHub Logo"
                 fill
                 className="object-cover"
                 sizes="40px"
               />
             </div>
             <span className="text-2xl font-bold text-[#333333] hover:text-[#FF5C33] transition-all duration-300" style={{ fontFamily: 'Figtree, sans-serif' }}>
-              SireTech
+              SireHub
             </span>
           </Link>
 
@@ -336,14 +336,14 @@ const Navbar = () => {
             <div className="relative w-8 h-8 rounded-full overflow-hidden bg-white shadow-sm">
               <Image 
                 src="/logo.jpg"
-                alt="SireTech Logo"
+                alt="SireHub Logo"
                 fill
                 className="object-cover"
                 sizes="32px"
               />
             </div>
             <span className="text-lg font-bold text-[#333333] hover:text-[#FF5C33] transition-all duration-300" style={{ fontFamily: 'Figtree, serif' }}>
-              SireTech
+              SireHub
             </span>
           </Link>
 
