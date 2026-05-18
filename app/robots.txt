@@ -1,5 +1,4 @@
-// app/robots.ts
-import { MetadataRoute } from 'next'
+import type { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -8,7 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/',
     },
-    // Fix this line to point to your specific site:
-    sitemap: 'https://SireHub.vercel.app',
-  }
+    sitemap: 'https://SireHub.vercel.app/sitemap.xml',
+  };
 }
